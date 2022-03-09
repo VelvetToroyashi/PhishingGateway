@@ -27,6 +27,6 @@ public class PhishingService : IHostedService
 
     public async Task StopAsync(CancellationToken cancellationToken)
     {
-        _gateway.StopAsync(cancellationToken);
+        await _gateway.StopAsync(cancellationToken);
     }
 }
