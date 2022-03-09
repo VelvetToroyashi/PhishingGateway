@@ -9,6 +9,7 @@
     <PackageProjectUrl>https://github.com/VelvetThePanda/PhishingGateway</PackageProjectUrl>
     <RepositoryUrl>https://github.com/VelvetThePanda/PhishingGateway</RepositoryUrl>
     <License>https://github.com/VelvetThePanda/PhishingGateway/blob/master/LICENSE</License>
+    <PackageVersion>1.0.1</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
