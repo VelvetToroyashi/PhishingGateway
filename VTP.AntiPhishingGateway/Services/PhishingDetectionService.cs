@@ -67,8 +67,8 @@ public class PhishingDetectionService
         {
             using var request = new HttpRequestMessage(HttpMethod.Post, ApiUrl);
 
-            var json = "{ \"message\": \"" + string.Join(" ", links.Select(l => l.Groups["link"].Value)) + "\" }";
-
+            var json = JsonSerializer.Serialize(new { message = string.Join(" ", links.Select(x => x.Groups["link"].Value)) });
+            
             var content = new StringContent(json);
             content.Headers.ContentType = new ("application/json");
             

@@ -8,6 +8,7 @@
     <Description>A package designed to be used with Remora.Discord to detect phishing content in messages.</Description>
     <PackageProjectUrl>https://github.com/VelvetThePanda/PhishingGateway</PackageProjectUrl>
     <RepositoryUrl>https://github.com/VelvetThePanda/PhishingGateway</RepositoryUrl>
+    <License>https://github.com/VelvetThePanda/PhishingGateway/blob/master/LICENSE</License>
   </PropertyGroup>
 
   <ItemGroup>
