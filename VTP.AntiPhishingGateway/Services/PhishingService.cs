@@ -3,13 +3,13 @@ using Microsoft.Extensions.Options;
 
 namespace VTP.AntiPhishingGateway;
 
-public class PhishingDetectionHelper : IHostedService
+public class PhishingService : IHostedService
 {
     private readonly PhishingServiceOptions _options;
     private readonly IHostApplicationLifetime _lifetime;
     private readonly PhishingGatewayService _gateway;
 
-    public PhishingDetectionHelper(IOptions<PhishingServiceOptions> options, IHostApplicationLifetime lifetime, PhishingGatewayService gateway)
+    public PhishingService(IOptions<PhishingServiceOptions> options, IHostApplicationLifetime lifetime, PhishingGatewayService gateway)
     {
         _options = options.Value;
         _lifetime = lifetime;

@@ -1,3 +1,3 @@
 ﻿namespace VTP.AntiPhishingGateway;
 
-public record PhishingServiceOptions();
+public record PhishingServiceOptions(bool TerminateOnError = false);

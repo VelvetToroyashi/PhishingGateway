@@ -2,4 +2,4 @@
 
 namespace VTP.AntiPhishingGateway;
 
-public record PhishingDetectionResult(bool IsPhishing, PhishingSource Source);
+public record PhishingDetectionResult(bool IsPhishing, IReadOnlyDictionary<string, PhishingSource>? DetectedDomains);
