@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using Remora.Extensions.Options.Immutable;
 
 namespace VTP.AntiPhishingGateway;
 
@@ -35,6 +36,9 @@ public static class IServiceCollectionExtensions
         );
 
         collection.AddOptions();
+
+        collection.Configure(() => new PhishingServiceOptions());
+        collection.Configure(() => new PhishingDetectionOptions(false, false));
         
         collection.TryAddSingleton<PhishingGatewayService>();
         collection.TryAddSingleton<PhishingDetectionService>();
