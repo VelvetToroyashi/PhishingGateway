@@ -11,7 +11,7 @@ public static class IServiceCollectionExtensions
     /// </summary>
     public static IServiceCollection AddPhishingService(this IServiceCollection collection)
     {
-        collection.ConfigureOptions<PhishingServiceOptions>();
+        collection.AddOptions();
         collection.AddHostedService<PhishingService>();
         
         return collection;
@@ -25,13 +25,16 @@ public static class IServiceCollectionExtensions
     /// <returns>The container to chain calls with.</returns>
     public static IServiceCollection AddAntiPhishing(this IServiceCollection collection)
     {
-        collection.AddHttpClient(Constants.HttpClientName, client =>
+        collection.AddHttpClient
+        (
+            Constants.HttpClientName, client =>
             {
                 client.DefaultRequestHeaders.TryAddWithoutValidation(Constants.IdentityHeader, Constants.ProjectIdentifier);
                 client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", Constants.ProjectIdentifier);
-            });
+            }
+        );
 
-        collection.ConfigureOptions<PhishingDetectionOptions>();
+        collection.AddOptions();
         
         collection.TryAddSingleton<PhishingGatewayService>();
         collection.TryAddSingleton<PhishingDetectionService>();
